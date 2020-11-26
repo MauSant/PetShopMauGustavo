@@ -15,3 +15,18 @@ Funcionário: Da loja.
 Animais: Classe dos animais que serão doados
 Cão e Gato. (SubClasses dos animais)  
 Produtos: Os itens que estão à venda na loja.  
+
+Sobrecarga
+Sobreposição
+Composição
+Herança
+Polimorfismo/ligação dianamica
+Campos estáticos
+Cast
+Instace of
+Classes Abstratas/Metodos Abstratos
+Interfaces
+Pacotes
+Tratamento de Exceção
+Comentários / @
+Número mínimo de classes (5)
