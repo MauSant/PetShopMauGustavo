@@ -1,6 +1,10 @@
 package Loja;
 
 import Loja.Pets.Animal;
+import Loja.Pets.Dog;
+import Loja.Pets.Cat;
+import Loja.Pets.animalSound;
+
 
 import java.util.ArrayList;
 
@@ -55,11 +59,39 @@ public class Client {
         this.moneyBank = moneyBank;
     }
 
-    public void addAnimals(Animal animal) {
+    public void addAnimal(Animal animal) {
         this.animals.add(animal);
     }
 
     /*
     * Methods
-     */
+    */
+    //***************************Exemplo SOBRECARGA*********************************
+
+    //Adopting a animal that is from the Store
+    public void adotarAnimal(Animal animal){
+        if(animal instanceof Cat){
+            this.addAnimal(new Cat(animal.getName(),animalSound.CAT.getSound()));
+        }
+        else if(animal instanceof Dog){
+            this.addAnimal(new Dog(animal.getName(),animalSound.DOG.getSound()));
+        }
+        else{
+            this.addAnimal(animal);
+        }
+    }
+    //Adopting a animal that is not from the Store
+    public void adotarAnimal(String name,boolean isCat,boolean isDog){
+        if(isCat){
+            this.addAnimal(new Cat(name,animalSound.DOG.getSound()));
+        }
+        else if (isDog){
+            this.addAnimal(new Dog(name,animalSound.CAT.getSound()));
+        }
+        else{
+            this.addAnimal(new Animal(name));
+        }
+    }
+    //***************************Exemplo SOBRECARGA*********************************
+
 }
