@@ -18,6 +18,23 @@ public class Loja {
         this.workers= new ArrayList<>();
         this.animals = new ArrayList<>();
     }
+    //***************************Exemplo COMPOSIÇÂO*********************************
+
+    //Composition Loja with Worker, WEAK composition
+    public Loja(String name, Worker worker){
+        this.name = name;
+        this.workers = new ArrayList<>();
+        this.workers.add(worker);
+    }
+
+    //Composition Loja with Worker, STRONG composition
+    public Loja(String name, String workerName,String job, float salary){
+        this.name = name;
+        this.workers = new ArrayList<>();
+        this.workers.add(new Worker(workerName,job,salary));
+    }
+    //***************************Exemplo COMPOSIÇÂO*********************************
+
     /*
      * Getters
      */
