@@ -67,7 +67,7 @@ public class Client {
     * Methods
     */
     //***************************Exemplo SOBRECARGA*********************************
-
+        //***************************Exemplo INSTANCE OF*********************************
     //Adopting a animal that is from the Store
     public void adotarAnimal(Animal animal){
         if(animal instanceof Cat){
@@ -80,6 +80,8 @@ public class Client {
             this.addAnimal(animal);
         }
     }
+        //***************************Exemplo INSTANCE OF*********************************
+
     //Adopting a animal that is not from the Store
     public void adotarAnimal(String name,boolean isCat,boolean isDog){
         if(isCat){
