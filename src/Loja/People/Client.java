@@ -1,9 +1,9 @@
-package Loja;
+package Loja.People;
 
 import Loja.Pets.Animal;
 import Loja.Pets.Dog;
 import Loja.Pets.Cat;
-import Loja.Pets.animalSound;
+import Loja.Pets.AnimalSound;
 
 
 import java.util.ArrayList;
@@ -71,10 +71,10 @@ public class Client {
     //Adopting a animal that is from the Store
     public void adotarAnimal(Animal animal){
         if(animal instanceof Cat){
-            this.addAnimal(new Cat(animal.getName(),animalSound.CAT.getSound()));
+            this.addAnimal(new Cat(animal.getName(), AnimalSound.CAT.getSound()));
         }
         else if(animal instanceof Dog){
-            this.addAnimal(new Dog(animal.getName(),animalSound.DOG.getSound()));
+            this.addAnimal(new Dog(animal.getName(), AnimalSound.DOG.getSound()));
         }
         else{
             this.addAnimal(animal);
@@ -83,15 +83,15 @@ public class Client {
         //***************************Exemplo INSTANCE OF*********************************
 
     //Adopting a animal that is not from the Store
-    public void adotarAnimal(String name,boolean isCat,boolean isDog){
+    public void adotarAnimal(String name, String animalSound,boolean isCat,boolean isDog){
         if(isCat){
-            this.addAnimal(new Cat(name,animalSound.DOG.getSound()));
+            this.addAnimal(new Cat(name, AnimalSound.DOG.getSound()));
         }
         else if (isDog){
-            this.addAnimal(new Dog(name,animalSound.CAT.getSound()));
+            this.addAnimal(new Dog(name, AnimalSound.CAT.getSound()));
         }
         else{
-            this.addAnimal(new Animal(name));
+            this.addAnimal(new Animal(name, animalSound));
         }
     }
     //***************************Exemplo SOBRECARGA*********************************

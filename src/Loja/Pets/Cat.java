@@ -8,9 +8,10 @@ public class Cat extends Animal {
      */
 
     public Cat(String name, String animalSound) {
-        super(name);
-        this.animalSound = animalSound;
+        super(name, animalSound);
+        this.animalSound = AnimalSound.CAT.getSound();
     }
+
     /*
      * Getters
      */
@@ -27,7 +28,12 @@ public class Cat extends Animal {
     public void setAnimalSound(String animalSound) {
         this.animalSound = animalSound;
     }
+
     /*
      * Methods
      */
+
+    public void animalSound(){
+        System.out.println(AnimalSound.CAT.getSound());
+    }
 }

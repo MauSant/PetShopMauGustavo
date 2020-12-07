@@ -1,15 +1,13 @@
 package Loja.Pets;
 
 public class Dog extends Animal {
-    private String animalSound;
 
     /*
      * Contrutores
      */
 
     public Dog(String name, String animalSound) {
-        super(name);
-        this.animalSound = animalSound;
+        super(name,animalSound);
     }
     /*
      * Getters
@@ -17,18 +15,18 @@ public class Dog extends Animal {
 
 
 
-    public String getAnimalSound() {
-        return animalSound;
-    }
+
     /*
      * Setters
      */
 
 
-    public void setAnimalSound(String animalSound) {
-        this.animalSound = animalSound;
-    }
+
     /*
      * Methods
      */
+
+    public void animalSound(){
+        System.out.println(AnimalSound.DOG.getSound());
+    }
 }

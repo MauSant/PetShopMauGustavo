@@ -1,4 +1,10 @@
-package Loja;
+package Loja.People;
+
+import Loja.Loja;
+import Loja.Pets.Animal;
+import Loja.Pets.AnimalSound;
+import Loja.Pets.Cat;
+import Loja.Pets.Dog;
 
 public class Worker {
     private String name;
@@ -47,4 +53,17 @@ public class Worker {
     /*
      * Methods
      */
+
+    //***************************Exemplo CASTING*********************************
+    //Metodo para ouvir de um cliente qual som o animal dele está fazendo
+    public void whatSoundItDoes(Animal animal, String sound) {
+        if (sound != null) {
+            System.out.println("Elx ta fazendo um som assim oh: " + sound);
+        } else if (sound == "like a cat") {
+            ((Cat) animal).animalSound();
+        } else if (sound == "like a dog") {
+            ((Dog) animal).animalSound();
+        }
+    }
+    //***************************Exemplo CASTING*********************************
 }
