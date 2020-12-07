@@ -1,5 +1,6 @@
 package Loja;
 
+import Loja.People.Worker;
 import Loja.Pets.Animal;
 
 import java.util.ArrayList;

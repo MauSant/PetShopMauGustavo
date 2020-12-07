@@ -1,11 +1,11 @@
 package Loja.Pets;
 
-public enum animalSound {
+public enum AnimalSound {
     DOG("AuuAu"), CAT("Mauu");
 
     private final String  sound;
 
-    animalSound(String sound){
+    AnimalSound(String sound){
         this.sound = sound;
     }
 
