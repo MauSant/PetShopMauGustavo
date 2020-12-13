@@ -7,6 +7,16 @@ public class Cat extends Animal {
      * Contrutores
      */
 
+    public Cat(String name,String sound) {
+        super(name, sound);
+        this.isFurBallSpitter = true;
+    }
+
+    public Cat(String name,String sound, boolean isFurrBallSpitter) {
+        super(name, sound);
+        this.isFurBallSpitter = true;
+    }
+
     public Cat(String name, boolean isFurrBallSpitter) {
         super(name, AnimalSound.CAT.getSound());
         this.isFurBallSpitter = isFurrBallSpitter;
@@ -23,9 +33,7 @@ public class Cat extends Animal {
         return isFurBallSpitter;
     }
 
-    public String getAnimalSound() {
-        return AnimalSound.CAT.getSound();
-    }
+
     /*
      * Setters
      */
@@ -36,8 +44,7 @@ public class Cat extends Animal {
     /*
      * Methods
      */
-
-    public void animalSound(){
+    public void animalCatSound(){
         System.out.println(AnimalSound.CAT.getSound());
     }
 }

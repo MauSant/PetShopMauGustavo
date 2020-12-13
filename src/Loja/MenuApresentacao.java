@@ -61,8 +61,10 @@ public class MenuApresentacao {
 
     private void casting(){
         System.out.println("Casting");
-        Animal dog = new Animal("Dogão","auuu");
-        Worker.whatSoundItDoes(dog,"like a cat");
+        Animal cat = new Cat("Gato","Animal",true);
+        Animal dog = new Dog("Gato","Animal");
+        Worker.whatSoundItDoes(cat);
+        Worker.whatSoundItDoes(dog);
     }
 
     private void composicao(){

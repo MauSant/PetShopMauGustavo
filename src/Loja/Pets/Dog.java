@@ -11,6 +11,10 @@ public class Dog extends Animal {
         super(name,AnimalSound.DOG.getSound());
     }
 
+    public Dog(String name, String sound){
+        super(name,sound);
+        this.lovesBones = true;
+    }
     public Dog(String name, boolean lovesBones) {
         super(name,AnimalSound.DOG.getSound());
         this.lovesBones = lovesBones;
@@ -41,7 +45,7 @@ public class Dog extends Animal {
      * Methods
      */
 
-    public void animalSound(){
+    public void animalDogSound(){
         System.out.println(AnimalSound.DOG.getSound());
     }
 }
