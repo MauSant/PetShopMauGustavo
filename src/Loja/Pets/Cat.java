@@ -1,22 +1,19 @@
 package Loja.Pets;
 
 public class Cat extends Animal {
-    private String animalSound;
     private boolean isFurBallSpitter;
     private static int numCats;
     /*
      * Contrutores
      */
 
-    public Cat(String name, String animalSound, boolean isFurrBallSpitter) {
-        super(name, animalSound);
+    public Cat(String name, boolean isFurrBallSpitter) {
+        super(name, AnimalSound.CAT.getSound());
         this.isFurBallSpitter = isFurrBallSpitter;
-        this.animalSound = AnimalSound.CAT.getSound();
     }
 
-    public Cat(String name, String animalSound) {
-        super(name, animalSound);
-        this.animalSound = AnimalSound.CAT.getSound();
+    public Cat(String name) {
+        super(name, AnimalSound.CAT.getSound());
     }
     /*
      * Getters
@@ -26,26 +23,14 @@ public class Cat extends Animal {
         return isFurBallSpitter;
     }
 
-    public static int getNumCats() {
-        return numCats;
-    }
-
     public String getAnimalSound() {
-        return animalSound;
+        return AnimalSound.CAT.getSound();
     }
     /*
      * Setters
      */
     public void setFurBallSpitter(boolean furBallSpitter) {
         isFurBallSpitter = furBallSpitter;
-    }
-
-    public void setAnimalSound(String animalSound) {
-        this.animalSound = animalSound;
-    }
-
-    public static void setNumCats(int numCats) {
-        Cat.numCats = numCats;
     }
 
     /*

@@ -3,20 +3,17 @@ package Loja.Pets;
 public class Dog extends Animal {
     private String animalSound;
     private boolean lovesBones;
-    private static int numDogs;
     /*
      * Contrutores
      */
 
-    public Dog(String name, String animalSound) {
-        super(name,animalSound);
-        this.animalSound = AnimalSound.DOG.getSound();
+    public Dog(String name) {
+        super(name,AnimalSound.DOG.getSound());
     }
 
-    public Dog(String name, String animalSound, boolean lovesBones) {
-        super(name,animalSound);
+    public Dog(String name, boolean lovesBones) {
+        super(name,AnimalSound.DOG.getSound());
         this.lovesBones = lovesBones;
-        this.animalSound = AnimalSound.DOG.getSound();
     }
     /*
      * Getters
@@ -24,32 +21,21 @@ public class Dog extends Animal {
 
     @Override
     public String getAnimalSound() {
-        return animalSound;
+        return  AnimalSound.DOG.getSound();
     }
 
     public boolean isLovesBones() {
         return lovesBones;
     }
 
-    public static int getNumDogs() {
-        return numDogs;
-    }
     /*
      * Setters
      */
-
-    @Override
-    public void setAnimalSound(String animalSound) {
-        this.animalSound = animalSound;
-    }
 
     public void setLovesBones(boolean lovesBones) {
         this.lovesBones = lovesBones;
     }
 
-    public static void setNumDogs(int numDogs) {
-        Dog.numDogs = numDogs;
-    }
 
     /*
      * Methods

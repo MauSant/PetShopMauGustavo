@@ -72,6 +72,7 @@ public class Manager extends People implements Credit{
     public void pedirAumento(){
         if(checkCredit()){
             this.setSalary(this.getSalary()+15);
+            System.out.println("O salario aumento para " + getSalary());
         }
         else{
             System.out.println("Trabalha menos e recebe mais");

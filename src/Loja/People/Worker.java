@@ -9,21 +9,38 @@ import Loja.Pets.Dog;
 public class Worker extends People implements Credit {
     private float salary;
     private float credit;
+    private float workedTime;
 
 
     /*
      * Contrutores
      */
+    public Worker(String name, float salary, float credit,float workedTime) {
+        super(name);
+        this.salary = salary;
+        this.credit = credit;
+        this.workedTime = workedTime;
+    }
+
     public Worker(String name, float salary, float credit) {
         super(name);
         this.salary = salary;
         this.credit = credit;
+        this.workedTime = 0;
     }
     /*
      * Getters
      */
     public float getCredit() {
         return credit;
+    }
+
+    public float getWorkedTime() {
+        return workedTime;
+    }
+
+    public void setWorkedTime(float workedTime) {
+        this.workedTime = workedTime;
     }
 
     public float getSalary() {
@@ -50,13 +67,13 @@ public class Worker extends People implements Credit {
      */
     //***************************Exemplo CASTING*********************************
     //Metodo para ouvir de um cliente qual som o animal dele está fazendo
-    public void whatSoundItDoes(Animal animal, String sound) {
-        if (sound != null) {
+    public static void whatSoundItDoes(Animal animal, String sound) {
+        if (sound == null) {
             System.out.println("Elx ta fazendo um som assim oh: " + sound);
         } else if (sound.equals("like a cat")) {
-            ((Cat) animal).animalSound();
+            System.out.println(((Cat) animal).getAnimalSound());
         } else if (sound.equals("like a dog")) {
-            ((Dog) animal).animalSound();
+            System.out.println(((Dog) animal).getAnimalSound());
         }
     }
     //***************************Exemplo CASTING*********************************
@@ -71,18 +88,21 @@ public class Worker extends People implements Credit {
 
     public void adotarAnimal(String name, String animalSound,boolean isCat,boolean isDog){
         if(isCat){
-            this.addAnimal(new Cat(name, AnimalSound.DOG.getSound(),true));
+            this.addAnimal(new Cat(name, true));
         }
         else if (isDog){
-            this.addAnimal(new Dog(name, AnimalSound.CAT.getSound()));
+            this.addAnimal(new Dog(name, true));
         }
         else{
             this.addAnimal(new Animal(name, animalSound));
         }
     }
 
-
     //***************************Exemplo INTERFACE*********************************
+
+    public int horasTrabalhadas(){
+        return (int) getWorkedTime();
+    }
 
     @Override
     public boolean checkCredit() {
@@ -96,9 +116,10 @@ public class Worker extends People implements Credit {
     public void pedirAumento(){
         if(checkCredit()){
             this.setSalary(this.getSalary()+10);
+            System.out.println("O salario aumento para " + getSalary());
         }
         else{
-            System.out.println("Vá trabalhar para o sistema capitalista e achar que merece um aumentozinho enquanto vc devia ser o dono de tudo.");
+            System.out.println("Precisa ter mais creditos.");
         }
     }
     //***************************Exemplo INTERFACE*********************************

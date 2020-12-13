@@ -49,7 +49,7 @@ public abstract class People {
     public abstract void adotarAnimal(Animal animal);
 
     //***************************Exemplo INSTACEOF*********************************
-    public void makeCard(People people) {
+    public static void makeCard(People people) {
         try {
             if (people instanceof Client) {
                 System.out.println("Fazer cartão de cliente");
