@@ -6,31 +6,24 @@ import Loja.Pets.AnimalSound;
 import Loja.Pets.Cat;
 import Loja.Pets.Dog;
 
-public class Worker {
-    private String name;
-    private String job;
+public class Worker extends People {
     private float salary;
+    private float credit;
+
 
     /*
      * Contrutores
      */
-
-    public Worker(String name, String job, float salary) {
-        this.name = name;
-        this.job = job;
+    public Worker(String name, float salary, float credit) {
+        super(name);
         this.salary = salary;
+        this.credit = credit;
     }
     /*
      * Getters
      */
 
-    public String getName() {
-        return name;
-    }
 
-    public String getJob() {
-        return job;
-    }
 
     public float getSalary() {
         return salary;
@@ -39,12 +32,9 @@ public class Worker {
      * Setters
      */
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
-    public void setJob(String job) {
-        this.job = job;
+    public void addAnimal(Animal animal) {
+        this.getAnimals().add(animal);
     }
 
     public void setSalary(float salary) {
@@ -66,4 +56,9 @@ public class Worker {
         }
     }
     //***************************Exemplo CASTING*********************************
+
+    public void adotarAnimal(Animal animal){
+        this.addAnimal(animal);
+        this.getAnimals().remove(animal);
+    }
 }

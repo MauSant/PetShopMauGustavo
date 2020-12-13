@@ -2,6 +2,7 @@ package Loja.Pets;
 
 public class Cat extends Animal {
     private String animalSound;
+    private boolean isFurBallSpitter;
 
     /*
      * Contrutores
