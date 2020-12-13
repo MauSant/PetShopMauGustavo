@@ -53,9 +53,9 @@ public class Worker extends People implements Credit {
     public void whatSoundItDoes(Animal animal, String sound) {
         if (sound != null) {
             System.out.println("Elx ta fazendo um som assim oh: " + sound);
-        } else if (sound == "like a cat") {
+        } else if (sound.equals("like a cat")) {
             ((Cat) animal).animalSound();
-        } else if (sound == "like a dog") {
+        } else if (sound.equals("like a dog")) {
             ((Dog) animal).animalSound();
         }
     }
@@ -71,7 +71,7 @@ public class Worker extends People implements Credit {
 
     public void adotarAnimal(String name, String animalSound,boolean isCat,boolean isDog){
         if(isCat){
-            this.addAnimal(new Cat(name, AnimalSound.DOG.getSound()));
+            this.addAnimal(new Cat(name, AnimalSound.DOG.getSound(),true));
         }
         else if (isDog){
             this.addAnimal(new Dog(name, AnimalSound.CAT.getSound()));

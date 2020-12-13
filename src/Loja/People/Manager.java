@@ -2,13 +2,20 @@ package Loja.People;
 
 import Loja.Pets.Animal;
 
+
+/*
+* Class manager represents the manager of the store.
+*/
 public class Manager extends People implements Credit{
     private float salary;
     private float credit;
 
     /*
     * Contrutores
-    */
+     * @param name it's the name of the manager.
+     * @param salary it's the salary of the manager.
+     * @param credit it's the credit of the manager.
+     */
     public Manager(String name, float salary, float credit) {
         super(name);
         this.salary = salary;
@@ -59,11 +66,7 @@ public class Manager extends People implements Credit{
 
     @Override
     public boolean checkCredit() {
-        if(this.getCredit() > 50 )
-            return true;
-        else {
-            return false;
-        }
+        return this.getCredit() > 50;
     }
     @Override
     public void pedirAumento(){

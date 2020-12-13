@@ -11,8 +11,8 @@ public class Main {
 	// write your code here
 
         //Polimorfismo
-        Dog leonardo = new Dog("leonardo", AnimalSound.DOG.getSound());
-        Cat mauricio = new Cat("mauricio", AnimalSound.CAT.getSound());
+        Dog leonardo = new Dog("leonardo", AnimalSound.DOG.getSound(),true);
+        Cat mauricio = new Cat("mauricio", AnimalSound.CAT.getSound(),true);
 
 
 

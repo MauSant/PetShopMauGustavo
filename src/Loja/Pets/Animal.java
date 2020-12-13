@@ -5,6 +5,7 @@ import Loja.Loja;
 public class Animal {
     private String name;
     private String animalSound;
+    private static int numAnimals;
     /*
      * Contrutores
      */
@@ -25,6 +26,10 @@ public class Animal {
         return animalSound;
     }
 
+    public static int getNumAnimals() {
+        return numAnimals;
+    }
+
     /*
      * Setters
      */
@@ -35,6 +40,10 @@ public class Animal {
 
     public void setAnimalSound(String animalSound) {
         this.animalSound = animalSound;
+    }
+
+    public static void setNumAnimals(int numAnimals) {
+        Animal.numAnimals = numAnimals;
     }
 
     /*

@@ -4,6 +4,9 @@ import Loja.Pets.Animal;
 
 import java.util.ArrayList;
 
+/*
+* People class is the base class representing a person.
+*/
 public abstract class People {
     private String name;
     private ArrayList<Animal> animals;
@@ -47,18 +50,24 @@ public abstract class People {
 
     //***************************Exemplo INSTACEOF*********************************
     public void makeCard(People people) {
-        if (people instanceof Client) {
-            System.out.println("Fazer cartão de cliente");
+        try {
+            if (people instanceof Client) {
+                System.out.println("Fazer cartão de cliente");
+            }
+            else if (people instanceof Manager) {
+                System.out.println("Fazer cartão de Gerente");
+            }
+            else if (people instanceof Worker) {
+                System.out.println("Fazer cartão de Trabalhador");
+            }
+            else{
+                throw new Exception("Não é uma pessoa");
+            }
         }
-        else if (people instanceof Manager) {
-            System.out.println("Fazer cartão de Gerente");
+        catch (Exception e){
+            System.out.println(e.getMessage());
         }
-        else if (people instanceof Worker) {
-            System.out.println("Fazer cartão de Trabalhador");
-        }
-        else{
-            System.out.println("Isto não é uma pessoa");
-        }
+
     }
         //***************************Exemplo INSTACEOF*********************************
 }

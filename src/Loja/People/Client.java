@@ -60,7 +60,7 @@ public class Client extends People{
     //Adopting a animal that is not from the Store
     public void adotarAnimal(String name, String animalSound,boolean isCat,boolean isDog){
         if(isCat){
-            this.addAnimal(new Cat(name, AnimalSound.DOG.getSound()));
+            this.addAnimal(new Cat(name, AnimalSound.DOG.getSound(),true));
         }
         else if (isDog){
             this.addAnimal(new Dog(name, AnimalSound.CAT.getSound()));
