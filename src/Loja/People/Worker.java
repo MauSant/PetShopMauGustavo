@@ -22,16 +22,20 @@ public class Worker extends People {
     /*
      * Getters
      */
-
-
+    public float getCredit() {
+        return credit;
+    }
 
     public float getSalary() {
         return salary;
     }
+
     /*
      * Setters
      */
-
+    public void setCredit(float credit) {
+        this.credit = credit;
+    }
 
     public void addAnimal(Animal animal) {
         this.getAnimals().add(animal);
@@ -40,10 +44,10 @@ public class Worker extends People {
     public void setSalary(float salary) {
         this.salary = salary;
     }
+
     /*
      * Methods
      */
-
     //***************************Exemplo CASTING*********************************
     //Metodo para ouvir de um cliente qual som o animal dele está fazendo
     public void whatSoundItDoes(Animal animal, String sound) {
@@ -57,8 +61,23 @@ public class Worker extends People {
     }
     //***************************Exemplo CASTING*********************************
 
+    //Adota um animal da loja
+    @Override
     public void adotarAnimal(Animal animal){
         this.addAnimal(animal);
         this.getAnimals().remove(animal);
+        this.setCredit(this.getCredit()+10);//Aumenta o credito de um funcionario
+    }
+
+    public void adotarAnimal(String name, String animalSound,boolean isCat,boolean isDog){
+        if(isCat){
+            this.addAnimal(new Cat(name, AnimalSound.DOG.getSound()));
+        }
+        else if (isDog){
+            this.addAnimal(new Dog(name, AnimalSound.CAT.getSound()));
+        }
+        else{
+            this.addAnimal(new Animal(name, animalSound));
+        }
     }
 }

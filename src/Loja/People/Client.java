@@ -51,6 +51,7 @@ public class Client extends People{
     */
     //***************************Exemplo SOBRECARGA*********************************
     //Adopting a animal that is from the Store
+    @Override
     public void adotarAnimal(Animal animal){
         this.addAnimal(animal);
         this.getAnimals().remove(animal);
