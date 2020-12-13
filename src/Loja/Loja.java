@@ -32,7 +32,7 @@ public class Loja {
     public Loja(String name, String workerName,String job, float salary){
         this.name = name;
         this.workers = new ArrayList<>();
-        this.workers.add(new Worker(workerName,job,salary));
+        this.workers.add(new Worker(workerName,salary,0));
     }
     //***************************Exemplo COMPOSIÇÂO*********************************
 
