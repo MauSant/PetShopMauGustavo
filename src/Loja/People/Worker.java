@@ -6,7 +6,7 @@ import Loja.Pets.AnimalSound;
 import Loja.Pets.Cat;
 import Loja.Pets.Dog;
 
-public class Worker extends People {
+public class Worker extends People implements Credit {
     private float salary;
     private float credit;
 
@@ -80,4 +80,27 @@ public class Worker extends People {
             this.addAnimal(new Animal(name, animalSound));
         }
     }
+
+
+    //***************************Exemplo INTERFACE*********************************
+
+    @Override
+    public boolean checkCredit() {
+        if(this.getCredit() > 100 )
+            return true;
+        else {
+            return false;
+        }
+    }
+    @Override
+    public void pedirAumento(){
+        if(checkCredit()){
+            this.setSalary(this.getSalary()+10);
+        }
+        else{
+            System.out.println("Vá trabalhar para o sistema capitalista e achar que merece um aumentozinho enquanto vc devia ser o dono de tudo.");
+        }
+    }
+    //***************************Exemplo INTERFACE*********************************
+
 }

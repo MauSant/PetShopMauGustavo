@@ -2,7 +2,7 @@ package Loja.People;
 
 import Loja.Pets.Animal;
 
-public class Manager extends People{
+public class Manager extends People implements Credit{
     private float salary;
     private float credit;
 
@@ -54,4 +54,25 @@ public class Manager extends People{
         this.getAnimals().remove(animal);
         this.setCredit(this.getCredit()+10); //Aumenta o credito de um funcionario
     }
+
+    //***************************Exemplo INTERFACE*********************************
+
+    @Override
+    public boolean checkCredit() {
+        if(this.getCredit() > 50 )
+            return true;
+        else {
+            return false;
+        }
+    }
+    @Override
+    public void pedirAumento(){
+        if(checkCredit()){
+            this.setSalary(this.getSalary()+15);
+        }
+        else{
+            System.out.println("Trabalha menos e recebe mais");
+        }
+    }
+    //***************************Exemplo INTERFACE*********************************
 }
