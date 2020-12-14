@@ -48,4 +48,9 @@ public class Dog extends Animal {
     public void animalDogSound(){
         System.out.println(AnimalSound.DOG.getSound());
     }
+
+    @Override
+    public void animalSound(){
+        System.out.println(this.getAnimalSound());
+    }
 }

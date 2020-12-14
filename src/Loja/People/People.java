@@ -58,7 +58,8 @@ public abstract class People {
                 System.out.println("Fazer cartão de Gerente");
             }
             else if (people instanceof Worker) {
-                System.out.println("Fazer cartão de Trabalhador");
+                throw new Exception("Fazer cartão de Trabalhador");
+//                System.out.println("Fazer cartão de Trabalhador");
             }
             else{
                 throw new Exception("Não é uma pessoa");
