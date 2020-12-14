@@ -67,13 +67,17 @@ public class Worker extends People implements Credit {
      */
     //***************************Exemplo CASTING*********************************
     //Metodo para ouvir de um cliente qual som o animal dele está fazendo
-    public static void whatSoundItDoes(Animal animal, String sound) {
-        if (sound == null) {
-            System.out.println("Elx ta fazendo um som assim oh: " + sound);
-        } else if (sound.equals("like a cat")) {
-            System.out.println(((Cat) animal).getAnimalSound());
-        } else if (sound.equals("like a dog")) {
-            System.out.println(((Dog) animal).getAnimalSound());
+    public static void whatSoundItDoes(Animal animal) {
+
+        if (animal instanceof Cat) {
+            ((Cat) animal).animalCatSound();
+        }
+        else if (animal instanceof Dog) {
+            ((Dog) animal).animalDogSound();
+        }
+        else{
+            System.out.println("Elx ta fazendo um som assim oh: ");
+            animal.animalSound();
         }
     }
     //***************************Exemplo CASTING*********************************
@@ -88,7 +92,7 @@ public class Worker extends People implements Credit {
 
     public void adotarAnimal(String name, String animalSound,boolean isCat,boolean isDog){
         if(isCat){
-            this.addAnimal(new Cat(name, true));
+            this.addAnimal(new Cat(name,"Mauu",true));
         }
         else if (isDog){
             this.addAnimal(new Dog(name, true));
@@ -100,9 +104,6 @@ public class Worker extends People implements Credit {
 
     //***************************Exemplo INTERFACE*********************************
 
-    public int horasTrabalhadas(){
-        return (int) getWorkedTime();
-    }
 
     @Override
     public boolean checkCredit() {

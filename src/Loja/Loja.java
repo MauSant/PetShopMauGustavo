@@ -5,6 +5,7 @@ import Loja.People.Worker;
 import Loja.Pets.Animal;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Loja {
     private String name;
@@ -98,7 +99,7 @@ public class Loja {
     public String toString() {
         return "Loja{" +
                 "name='" + name + '\'' +
-                ", workers=" + workers +
+                ", workers=" + this.getWorkers().get(0).getName() +
                 ", animals=" + animals +
                 ", produtos=" + produtos +
                 ", clients=" + clients +
